@@ -10,23 +10,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/think-ij/cdp.git"
+    "url": "git+https://github.com/think-ij/vanillaSPA.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/think-ij/cdp/issues"
+    "url": "https://github.com/think-ij/vanillaSPA/issues"
   },
-  "homepage": "https://github.com/think-ij/cdp#readme",
+  "homepage": "https://github.com/think-ij/vanillaSPA",
   "devDependencies": {
     "@webpack-cli/serve": "^1.6.0",
     "html-webpack-plugin": "^4.4.0",
+    "sass-loader": "^10.2.1",
     "webpack": "^4.40.2"
   },
   "dependencies": {
+    "css-loader": "^3.6.0",
     "handlebars-loader": "^1.7.1",
     "jquery": "^3.6.0",
     "prettier": "^2.5.1",
+    "sass": "^1.51.0",
+    "style-loader": "^2.0.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^3.11.2",
     "webpack-node-externals": "^3.0.0"
