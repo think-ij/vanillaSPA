@@ -1,6 +1,6 @@
 // template
-const mainTemplate = require("./pages/main.hbs")();
-const aboutTemplate = require("./pages/about.hbs")();
+const mainTemplate = require("./pages/main.hbs");
+const aboutTemplate = require("./pages/about.hbs");
 
 // modules
 const mainModule = require("./modules/main.js").default;
@@ -26,13 +26,13 @@ let appContent;
 const initialRoutes = (element) => {
   // console.log("a");
   appContent = element;
-  renderHTML(routes["/"]);
+  renderHTML(routes["/"](null));
 
   window.onpopstate = () => {
-    // console.log("b");
+    console.log("b");
     const pathName = window.location.pathname;
-    renderHTML(routes[pathName]);
-    modules[pathName]();
+    renderHTML(routes[pathName](history.state));
+    modules[pathName](history.state);
   };
 };
 
@@ -41,7 +41,9 @@ const historyRouterPush = (pathName, data, callback) => {
   // console.log("c");
   // console.log(pathName);
   window.history.pushState(data, pathName, window.location.origin + pathName);
-  renderHTML(routes[pathName]);
+
+  console.log(data);
+  renderHTML(routes[pathName](data));
   modules[pathName](data);
   callback && typeof callback === "function" && callback(data);
 
