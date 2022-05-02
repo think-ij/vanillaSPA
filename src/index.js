@@ -1,6 +1,6 @@
 import $ from "jquery";
 
-const appNamespace = 'myApp';
+const appNamespace = "myApp";
 // router
 const { initialRoutes, historyRouterPush } = require("./router");
 
